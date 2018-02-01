@@ -1,11 +1,13 @@
 def sort_dictionary(dic):
-    '''입력받은 dic의 각 키와 값을 튜플로 만든 다음, 키 값을 기준으로 정렬해서 리스트에 넣으세요. 그 리스트를 return하면 됩니다.'''
-    for k, v in dic.items():
-        print("Key:", k, "||", "Value", v)
-    return []
+    '''입력받은 dic의 각 키와 값을 튜플로 만든 다음, 키 값을 기준으로 정렬해서 리스트에 넣으세요.
+    그 리스트를 return하면 됩니다.'''
+    mylist = [(x, dic[x]) for x in sorted(dic.keys())]
+    print(mylist)
+    return mylist
+
 
 # 아래는 테스트로 출력해 보기 위한 코드입니다.
-print( sort_dictionary( {"김철수":78, "이하나":97, "정진원":88} ))
+print(sort_dictionary({"김철수": 78, "이하나": 97, "정진원": 88}))
 
 # 딕셔너리는 들어있는 값에 순서가 없지만, 키를 기준으로 정렬하고 싶습니다. 그래서 키와 값을 튜플로 구성하고, 이를 순서대로 리스트에 넣으려고 합니다.
 # 예를들어 {"김철수":78, "이하나":97, "정진원":88}이 있다면 각각의 키와 값을
